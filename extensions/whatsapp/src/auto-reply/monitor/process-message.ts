@@ -597,7 +597,7 @@ export async function processMessage(params: {
     ? (finalizeReply?.(turnResult.dispatchResult) ?? false)
     : false;
   removeAckReactionHandleAfterReply({
-    removeAfterReply: Boolean(params.cfg.messages?.removeAckAfterReply && didSendReply),
+    removeAfterReply: false,
     ackReaction,
     onError: (err) => {
       logAckFailure({
